@@ -70,7 +70,6 @@ const myChart = new Chart(ctx, {
 				ticks: {
 					color: '#e8e8e8',
 					stepSize: 50
-
 				}
 			}
 		}
@@ -98,8 +97,10 @@ button.addEventListener('click', () => {
 			myChart.update();
 		}
 
+
 	}
 });
+
 
 // Vape mode toggle
 toggle.addEventListener('change', () => {
