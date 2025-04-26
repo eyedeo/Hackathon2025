@@ -10,29 +10,32 @@ const label = document.getElementById('mode-label');
 
 const ctx = document.getElementById('graph').getContext('2d');
 
-
 const myChart = new Chart(ctx, {
 	type: 'line',
 	data: {
 		datasets: [{
-			label: 'Lung Health',
-			borderWidth: 1
+			label: "Lung Health",
+			borderWidth: 1,
+			yAxisID: 'y1'
 		},
 		{
 			label: 'Cost',
 			borderWidth: 1,
+			yAxisID: 'y2',
 		}]
 	},
 	options: {
 		responsive: true,
+
 		plugins: {
+
 			title: {
 				display: true,
 				text: '',
 				font: {
-					size: 24,
-					color: '#e8e8e8'
-				}
+					size: 24
+				},
+				color: '#e8e8e8'
 			},
 		},
 		scales: {
@@ -42,34 +45,54 @@ const myChart = new Chart(ctx, {
 				max: 10,
 				title: {
 					display: true,
-					text: "Months",
+					text: "Years",
 					font: {
 						size: 24,
 					},
 					color: '#e8e8e8'
-
 				},
 				ticks: {
 					stepSize: 1,
 					color: '#e8e8e8',
 				}
 			},
-			y: {
+			y1: {
+				type: 'linear',
+				position: 'left',
 				min: 0,
-				max: 1000,
-				color: '#e8e8e8',
+				max: 120,
 				title: {
 					display: true,
-					text: "Lung Health",
+					text: "Lung Health (\%)",
 					font: {
 						size: 24,
 					},
-
-					color: '#e8e8e8'
+					color: '#355d90'
 				},
 				ticks: {
-					color: '#e8e8e8',
-					stepSize: 50
+					color: '#355d90',
+					stepSize: 10
+				}
+			},
+			y2: {
+				type: 'linear',
+				position: 'right',
+				min: 0,
+				max: 20000,
+				title: {
+					display: true,
+					text: "Cost ($)",
+					font: {
+						size: 24,
+					},
+					color: '#963d60'
+				},
+				ticks: {
+					color: '#963d60',
+					stepSize: 1000
+				},
+				grid: {
+					drawOnChartArea: false, // important! so the right axis doesn't add extra grid lines
 				}
 			}
 		}
@@ -84,20 +107,24 @@ button.addEventListener('click', () => {
 		let cigsPerday = question1.value;
 		let price = question2.value;
 
-		let cigsPerMonth = cigsPerday * 30;
-		let packs = cigsPerMonth / 20;
+		let cigsPerYear = cigsPerday * 365;
+		let packs = cigsPerYear / 20;
 		let cumulativePrice = packs * price;
 
-		for (let i = 0; i <= 10; i++) {
-			myChart.data.datasets[1].data.push({ x: i, y: cumulativePrice });
+		let lungHealth = 100;
+		const k = 0.7;
 
-			cigsPerMonth += cigsPerday * 30;
-			packs += cigsPerMonth % 20;
+		for (let i = 0; i <= 11; i++) {
+			myChart.data.datasets[1].data.push({ x: i, y: cumulativePrice });
+			cigsPerYear += cigsPerday * 365;
+			packs += cigsPerYear % 20;
 			cumulativePrice += packs * price;
 			myChart.update();
+
+			myChart.data.datasets[0].data.push({ x: i, y: lungHealth });
+
+			lungHealth -= cigsPerday * k;
 		}
-
-
 	}
 });
 
