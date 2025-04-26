@@ -1,8 +1,9 @@
 #graph {
 	border: solid;
 	border-color: black;
-	height: 200px;
+	height: 400px;
 	width: 1000px;
+	padding-left: 10px;
 }
 
 #logo {
