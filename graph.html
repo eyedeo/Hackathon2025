@@ -1,31 +1,56 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="graph.css">
-	<script src="graph.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- load Chart.js early -->
+	<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom"></script>
 	<link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@600&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
 	<div class="switch-wrapper">
+		<span id="mode-label">Cig Mode</span>
 		<label class="switch">
-			<input type="checkbox">
+			<input type="checkbox" id="mode-toggle">
 			<span class="slider"></span>
 		</label>
 	</div>
-	<img src="resources/nblogo.png" alt="logo" id="logo">
 
-	<br></br>
-	<svg id="graph"></svg>
+	<div class="logo-wrapper">
+		<a href="front.html" id="logo-wrapper">
+			<img src="resources/nblogo.png" alt="logo" id="logo">
+		</a>
+	</div>
 
-	<p class="questions">How many cigarettes do you smoke a day?</p> <input type="number" id="packs" <body>
-	<p class="questions">How much does a pack of cigarettes cost?</p> <input type="number" id="price"
-		onkeypress="return event.charCode >= 48" min="1"></input>
+	<div class="graph-wrapper">
+		<canvas id="graph"></canvas>
+	</div>
+
+	<div class="questions">
+		<div class="question-wrapper">
+			<p class="question">How many cigarettes do you smoke a day?</p>
+			<input type="number" class="inputs" id="question1" onkeypress="return event.charCode >= 48" min="0"
+				placeholder="0">
+		</div>
+
+
+		<div class="question-wrapper">
+			<p class="question">How much does a pack of cigarettes cost?</p>
+			<input type="number" class="inputs" id="question2" onkeypress="return event.charCode >= 48" min="0"
+				placeholder="$0">
+		</div>
+
+		<div class="question-wrapper">
+			<button class="complete" id="button">
+				Graph
+			</button>
+		</div>
+	</div>
 </body>
+
+<script src="graph.js" defer></script> <!-- defer your script -->
 
 </html>
