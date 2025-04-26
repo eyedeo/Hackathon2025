@@ -1,5 +1,10 @@
 body {
-	background-color: #241d36;
+  background-color: #241d36;
+  transition: background-color 1s ease;
+}
+
+body.vape-mode {
+  background-color: #6d427a; 
 }
 
 .question-wrapper {
@@ -93,17 +98,24 @@ input:checked+.slider::before {
 	transform: translateX(22px);
 }
 
-.switch-wrapper {
-	position: absolute;
-	top: 20px;
-	right: 20px;
-}
+
 
 .graph-wrapper {
 	justify-content: center;
 	display: flex;
 }
 
+  .switch-wrapper {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Advent Pro', sans-serif;
+  color: #e8e8e8;
+  font-size: 16px;
+}
 #graph {
 	border: solid;
 	border-color: #e8e8e8;
