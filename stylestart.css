@@ -1,0 +1,50 @@
+body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #241d36;
+    } 
+    
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      text-align: center;
+      padding: 300px;
+    } 
+    
+    h1 {
+      font-size: 3em;
+      margin-bottom: 0.5em;
+    } 
+    
+    p.description {
+      font-size: 2.1em;
+      color: #FFFFFF;
+      max-width: 600px;
+    } 
+    
+    .scroll-down {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #C89741;
+      border: none;
+      border-radius: 50%;
+      padding: 20px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    } 
+    
+    .scroll-down:hover {
+      background-color: #a17933;
+    } 
+    
+    .scroll-down::after {
+      content: '↓';
+      font-size: 60px;
+      color: white;
+    } 
+.NoBacco {
