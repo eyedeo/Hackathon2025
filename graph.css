@@ -67,6 +67,11 @@ body {
 
 }
 
+.logo-wrapper {
+	margin: 10px;
+	padding: 10px;
+}
+
 input:checked+.slider {
 	background-color: #b412e6;
 }
@@ -86,14 +91,10 @@ input:checked+.slider::before {
 	display: flex;
 }
 
-.logo-wrapper {
-	padding: 10px;
-}
-
 #graph {
 	border: solid;
 	border-color: #e8e8e8;
-	height: 400px;
+	height: 500px;
 	width: 1000px;
 }
 

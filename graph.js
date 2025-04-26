@@ -6,6 +6,6 @@ packs.addEventListener('input', () => {
 	console.log(number);
 });
 
-logo.addEventListener('click', () => {
-	window.location.href = "front.html";
+document.getElementById('logo').addEventListener('click', function() {
+	window.location.href = 'front.html';
 });
