@@ -6,11 +6,15 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+<img src="resources/nobaccologo.png" alt="logo">
+
 <svg id="graph"></svg>
 
 <body>
-	<p>How many cigarettes do you smoke a day?</p> <input type="text" id="packs"></input>
-	<p>How much does a pack of cigarettes cost</p> <input type="text" id="price"></input>
+	<p>How many cigarettes do you smoke a day?</p> <input type="number" id="packs"
+		onkeypress="return event.charCode >= 48" min="1"></input>
+	<p>How much does a pack of cigarettes cost</p> <input type="number" id="price"
+		onkeypress="return event.charCode >= 48" min="1"></input>
 </body>
 
 <style>
