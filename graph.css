@@ -33,6 +33,15 @@ body.vape-mode {
 	font-size: 24px;
 }
 
+.date-unit {
+	text-align: center;
+	height: 45px;
+	width: 100px;
+	margin: 10px;
+	font-size: 24px;
+}
+
+
 
 .switch {
 	position: relative;
@@ -77,6 +86,10 @@ body.vape-mode {
 	padding: 10px;
 }
 
+.scroll-down {
+	transform: rotate(-180deg);
+}
+
 input:checked+.slider {
 	background-color: #b412e6;
 }
@@ -106,8 +119,8 @@ input:checked+.slider::before {
 #graph {
 	border: solid;
 	border-color: #e8e8e8;
-	height: 500px;
-	width: 1000px;
+	max-height: 500px;
+	max-width: 1000px;
 }
 
 #logo {
