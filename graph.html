@@ -2,54 +2,55 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="graph.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- load Chart.js early -->
-  <script src="graph.js" defer></script> <!-- defer your script -->
-  <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@600&display=swap" rel="stylesheet">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="graph.css">
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- load Chart.js early -->
+	<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@600&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <div class="switch-wrapper">
-    <span id="mode-label">Cig Mode</span>
-    <label class="switch">
-      <input type="checkbox" id="mode-toggle">
-      <span class="slider"></span>
-    </label>
-  </div>
+	<div class="switch-wrapper">
+		<span id="mode-label">Cig Mode</span>
+		<label class="switch">
+			<input type="checkbox" id="mode-toggle">
+			<span class="slider"></span>
+		</label>
+	</div>
 
-  <div class="logo-wrapper">
-    <a href="front.html" id="logo-wrapper">
-      <img src="resources/nblogo.png" alt="logo" id="logo">
-    </a>
-  </div>
+	<div class="logo-wrapper">
+		<a href="front.html" id="logo-wrapper">
+			<img src="resources/nblogo.png" alt="logo" id="logo">
+		</a>
+	</div>
 
-  <div class="graph-wrapper">
-    <canvas id="graph"></canvas>
-  </div>
+	<div class="graph-wrapper">
+		<canvas id="graph"></canvas>
+	</div>
 
-  <div class="questions">
-    <div class="question-wrapper">
-      <p class="question">How many cigarettes do you smoke a day?</p>
-      <input type="number" class="inputs" id="question1" onkeypress="return event.charCode >= 48" min="0" placeholder="0">
-    </div>
-    <br>
-    <div class="question-wrapper">
-      <p class="question">How long have you been smoking?</p>
-      <input type="number" class="inputs" id="question2" onkeypress="return event.charCode >= 48" min="0" placeholder="0">
-      <select class="date-unit">
-        <option value="1">Years</option>
-        <option value="2">Months</option>
-        <option value="3">Days</option>
-      </select>
-    </div>
-    <br>
-    <div class="question-wrapper">
-      <p class="question">How much does a pack of cigarettes cost?</p>
-      <input type="number" class="inputs" id="question3" onkeypress="return event.charCode >= 48" min="0" placeholder="$0">
-    </div>
-  </div>
+	<div class="questions">
+		<div class="question-wrapper">
+			<p class="question">How many cigarettes do you smoke a day?</p>
+			<input type="number" class="inputs" id="question1" onkeypress="return event.charCode >= 48" min="0"
+				placeholder="0">
+		</div>
+
+
+		<div class="question-wrapper">
+			<p class="question">How much does a pack of cigarettes cost?</p>
+			<input type="number" class="inputs" id="question2" onkeypress="return event.charCode >= 48" min="0"
+				placeholder="$0">
+		</div>
+
+		<div class="question-wrapper">
+			<button class="complete" id="button">
+				Graph
+			</button>
+		</div>
+	</div>
 </body>
+
+<script src="graph.js" defer></script> <!-- defer your script -->
 
 </html>
