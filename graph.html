@@ -2,23 +2,28 @@
 
 <html lang="en">
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<img src="resources/nblogo.png" alt="logo" id="logo">
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="graph.css">
+		<script src="graph.js"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@600&display=swap" rel="stylesheet">
 
-<body>
-	<svg id="graph"></svg>
+	</head>
 
-	<p id="question1">How many cigarettes do you smoke a day?</p> <input type="number" id="packs"
+	<body>
+		<div class="switch-wrapper">
+			<label class="switch">
+				<input type="checkbox">
+				<span class="slider"></span>
+			</label>
+		</div>
+		<img src="resources/nblogo.png" alt="logo" id="logo">
+		<svg id="graph"></svg>
+
+		<p class="questions">How many cigarettes do you smoke a day?</p> <input type="number" id="packs"
 		onkeypress="return event.charCode >= 48" min="1"></input>
-	<p id="question2">How much does a pack of cigarettes cost?</p> <input type="number" id="price"
+		<p class="questions">How much does a pack of cigarettes cost?</p> <input type="number" id="price"
 		onkeypress="return event.charCode >= 48" min="1"></input>
-</body>
-
-<link rel="stylesheet" href="graph.css">
-
-<script src="graph.js"></script>
-
+	</body>
 </html>
