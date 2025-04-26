@@ -6,7 +6,6 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="graph.css">
-	<script src="graph.js"></script>
 	<link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@600&display=swap" rel="stylesheet">
 
 </head>
@@ -27,20 +26,36 @@
 
 
 	<div class="graph-wrapper">
-		<svg id="graph"></svg>
+		<canvas id="graph"></canvas>
 	</div>
 
 	<div class="questions">
 		<div class="question-wrapper">
-			<p class="question">How many cigarettes do you smoke a day? </p> <input type="number" class="inputs"
-				id="packs" onkeypress="return event.charCode >= 48" min="0" placeholder="0">
+			<p class="question">How many cigarettes do you smoke a day?</p>
+			<input type="number" class="inputs" id="question1" onkeypress="return event.charCode >= 48" min="0"
+				placeholder="0">
 		</div>
 		<br></br>
 		<div class="question-wrapper">
-			<p class="question">How much does a pack of cigarettes cost?</p> <input type="number" class="inputs"
-				id="packs" onkeypress="return event.charCode >= 48" min="0" placeholder="$0">
+			<p class="question">How long have you been smoking?</p>
+			<input type="number" class="inputs" id="question2" onkeypress="return event.charCode >= 48" min="0"
+				placeholder="0">
+			<select class="date-unit">
+				<option value="1">Years</option>
+				<option value="2">Months</option>
+				<option value="3">Days</option>
+			</select>
+		</div>
+		<br></br>
+		<div class="question-wrapper">
+			<p class="question">How much does a pack of cigarettes cost?</p>
+			<input type="number" class="inputs" id="question3" onkeypress="return event.charCode >= 48" min="0"
+				placeholder="$0">
 		</div>
 	</div>
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="graph.js"></script>
 
 </html>
