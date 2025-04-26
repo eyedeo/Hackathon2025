@@ -20,15 +20,30 @@ const myChart = new Chart(ctx, {
 				font: {
 					size: 24
 				}
-			}
+			},
 		},
 		scales: {
 			x: {
+				title: {
+					display: true,
+					text: "Months",
+					font: {
+						size: 24
+					}
+				},
 				ticks: {
 					maxTicksLimit: 5
 				}
 			},
 			y: {
+				title: {
+					display: true,
+					text: "Lung Health",
+					font: {
+						size: 24
+					}
+				},
+
 				ticks: {
 					maxTicksLimit: 5
 				}
@@ -40,10 +55,8 @@ const myChart = new Chart(ctx, {
 cigs.addEventListener("keydown", function(event) {
 	if (event.key === "Enter") {
 		num = cigs.value;
-		console.log(num);
-		myChart.options.plugins.title.text = `At ${num} cigarettes per day`;
 
-		myChart.data.datasets[0].data.push({ x: 1, y: Number(num) });
+		myChart.options.plugins.title.text = `At ${num} cigarettes per day`;
 
 		myChart.update();
 
