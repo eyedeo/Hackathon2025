@@ -1,31 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="graph.css">
-  <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@600&display=swap" rel="stylesheet">
-  <script src="graph.js" defer></script> 
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="graph.css">
+		<script src="graph.js"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@600&display=swap" rel="stylesheet">
 
-<body>
-<div class="switch-wrapper">
-  <span id="mode-label">Cig Mode</span>
-  <label class="switch">
-    <input type="checkbox" id="mode-toggle">
-    <span class="slider"></span>
-  </label>
-</div>
+	</head>
 
-  <img src="resources/nblogo.png" alt="logo" id="logo">
-  <svg id="graph"></svg>
+	<body>
+		<div class="switch-wrapper">
+			<span id="mode-label">Cig Mode</span>
+			<label class="switch">
+				<input type="checkbox" id="mode-toggle">
+				<span class="slider"></span>
+			</label>
+		</div>
 
-  <p class="questions">How many cigarettes do you smoke a day?</p>
-  <input type="number" id="packs" onkeypress="return event.charCode >= 48" min="1">
+		<div class="logo-wrapper">
+			<a href="front.html" id="logo-wrapper">
+				<img src="resources/nblogo.png" alt="logo" id="logo">
+			</a>
+		</div>
 
-  <p class="questions">How much does a pack of cigarettes cost?</p>
-  <input type="number" id="price" onkeypress="return event.charCode >= 48" min="1">
-</body>
+
+		<div class="graph-wrapper">
+			<svg id="graph"></svg>
+		</div>
+
+		<div class="questions">
+			<div class="question-wrapper">
+				<p class="question">How many cigarettes do you smoke a day? </p> <input type="number" class="inputs"
+				id="cigs" onkeypress="return event.charCode >= 48" min="0" placeholder="0">
+			</div>
+			<br></br>
+			<div class="question-wrapper">
+				<p class="question">How much does a pack of cigarettes cost?</p> <input type="number" class="inputs"
+				id="packs" onkeypress="return event.charCode >= 48" min="0" placeholder="$0">
+			</div>
+		</div>
+	</body>
 
 </html>

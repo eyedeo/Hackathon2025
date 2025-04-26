@@ -1,14 +1,19 @@
 const logo = document.getElementById('logo');
-const packs = document.getElementById('packs');
-const qs = document.getElementsByClassName('questions');
+const cig = document.getElementById('cigs');
+const pack = document.getElementById('packs');
+const qs = document.getElementsByClassName('question');
 
-packs.addEventListener('input', () => {
-	const number = parseFloat(packs.value);
+pack.addEventListener('input', () => {
+	const number = parseFloat(pack.value);
+	console.log(number);
+});
+cig.addEventListener('input', () => {
+	const number = parseFloat(cig.value);
 	console.log(number);
 });
 
-logo.addEventListener('click', () => {
-	window.location.href = "";
+document.getElementById('logo').addEventListener('click', function() {
+	window.location.href = 'front.html';
 });
 
 const toggle = document.getElementById('mode-toggle');
