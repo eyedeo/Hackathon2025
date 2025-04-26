@@ -1,1 +1,10 @@
-#graph {}
+#graph {
+	border: solid;
+	border-color: black;
+	height: 200px;
+	width: 1000px;
+}
+
+#logo {
+	height: 50px;
+}
