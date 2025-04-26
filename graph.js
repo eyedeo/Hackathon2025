@@ -7,5 +7,5 @@ packs.addEventListener('input', () => {
 });
 
 logo.addEventListener('click', () => {
-	window.location.href = "";
+	window.location.href = "front.html";
 });

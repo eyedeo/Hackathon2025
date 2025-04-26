@@ -2,11 +2,32 @@ body {
 	background-color: #241d36;
 }
 
+.question-wrapper {
+	display: flex;
+	justify-content: center;
+	padding: 10px;
+}
+
 .questions {
+	padding: 10px;
+	align-self: auto;
+}
+
+.question {
 	font-family: 'Advent Pro', sans-serif;
 	color: #e8e8e8;
 	font-weight: 600;
+	font-size: 24px;
 }
+
+.inputs {
+	text-align: center;
+	height: 40px;
+	width: 80px;
+	margin: 10px;
+	font-size: 24px;
+}
+
 
 .switch {
 	position: relative;
@@ -60,12 +81,20 @@ input:checked+.slider::before {
 	right: 20px;
 }
 
+.graph-wrapper {
+	justify-content: center;
+	display: flex;
+}
+
+.logo-wrapper {
+	padding: 10px;
+}
+
 #graph {
 	border: solid;
-	border-color: black;
+	border-color: #e8e8e8;
 	height: 400px;
 	width: 1000px;
-	padding-left: 10px;
 }
 
 #logo {
