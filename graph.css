@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
 	background-color: #241d36;
 }
@@ -55,3 +56,15 @@ body {
   top: 20px;
   right: 20px;
   }
+=======
+#graph {
+	border: solid;
+	border-color: black;
+	height: 200px;
+	width: 1000px;
+}
+
+#logo {
+	height: 50px;
+}
+>>>>>>> refs/remotes/origin/main
